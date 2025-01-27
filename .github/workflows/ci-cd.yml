@@ -16,8 +16,7 @@ jobs:
         run: npm install
 
       - name: Create tsconfig.json
-        run: echo '{"compilerOptions":{"target":"es6","module":"commonjs","outDir":"build","strict":true}}' > tsconfig.json
-
+        run: echo '{"compilerOptions":{"target":"es6","module":"commonjs","outDir":"build","strict":true,"include":["index.js"],"exclude":["build"]}}' > tsconfig.json
       - name: Build
         run: npm run build
 
