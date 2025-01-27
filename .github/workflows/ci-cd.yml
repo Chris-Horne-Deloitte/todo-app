@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy:
@@ -15,8 +15,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install jest globally
+        run: npm install -g jest
+
       - name: Run tests
         run: npm test
 
-      - name: Build and deploy
-        run: npm run build && npm run deploy
+      - name: Build app
+        run: npm run build
+
+      - name: Deploy app
+        uses: actions/deploy@v1
+        with:
+          deployment-type: 'github-pages'
+          token: ${{ secrets.GITHUB_TOKEN }}
