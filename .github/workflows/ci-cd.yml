@@ -24,8 +24,8 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Deploy app
-        uses: actions/deploy@v1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          deployment-type: 'github-pages'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
