@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "node index.js",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.json",
     "dev": "nodemon index.js",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts"
