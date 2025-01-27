@@ -15,11 +15,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create tsconfig.json
-        run: echo '{"compilerOptions":{"target":"es6","module":"commonjs","outDir":"build","strict":true,"include":["index.js"],"exclude":["build"]}}' > tsconfig.json
-      - name: Build
-        run: npm run build
-
       - name: Install jest globally
         run: npm install -g jest
 
